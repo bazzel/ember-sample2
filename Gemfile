@@ -5,6 +5,8 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem "ember-rails", "~> 0.6.0"
+gem "faker", "~> 1.0.1"
 gem 'sqlite3'
 
 
@@ -37,4 +39,3 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "ember-rails", "~> 0.6.0"

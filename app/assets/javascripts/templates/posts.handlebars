@@ -1,5 +1,21 @@
-<h1>Posts</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Published</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<p>Your content here.</p>
-
-{{outlet}}
+  {{#each post in controller}}
+    <tr>
+      <td>{{post.title}}</td>
+      <td>{{post.body}}</td>
+      <td>{{post.published}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  {{/each}}
+</table>
