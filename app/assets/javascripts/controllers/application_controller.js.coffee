@@ -1,1 +1,2 @@
-App.ApplicationController = Em.ObjectController.extend()
+App.ApplicationController = Em.ObjectController.extend
+  transaction: null

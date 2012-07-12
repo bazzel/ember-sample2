@@ -12,6 +12,9 @@
       {{view App.PostRowView postBinding="this"}}
     {{/each}}
   </table>
+  <br/>
+
+  <a {{action createPost href=true}}>New Post</a>
 {{else}}
   Loading...
 {{/if}}

@@ -1,0 +1,23 @@
+<form {{action save on="submit"}} class="form-horizontal">
+  <fieldset>
+    <div class="control-group">
+      <label for="post_title" class="control-label">Title</label>
+      <div class="controls">
+        {{view Em.TextField valueBinding="title" id="post_title" class="input-xlarge"}}
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="post_body" class="control-label">Body</label>
+      <div class="controls">
+        {{view Em.TextArea valueBinding="body" id="post_body" class="input-xlarge"}}
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a {{action cancel}} class="btn">Cancel</a>
+
+    </div>
+  </fieldset>
+</form>
