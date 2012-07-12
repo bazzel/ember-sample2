@@ -8,7 +8,13 @@ App.Router = Em.Router.extend
 
     posts: Em.Route.extend
       route: '/posts'
+      showPost: Em.State.transitionTo('show')
       index: Em.Route.extend
         route: '/'
         connectOutlets: (router) ->
           router.get('applicationController').connectOutlet('posts', App.Post.find())
+      show: Em.Route.extend
+        route: '/:post_id'
+        connectOutlets: (router, post) ->
+          router.get('applicationController').connectOutlet('post', post)
+        goBack: Em.State.transitionTo('index')

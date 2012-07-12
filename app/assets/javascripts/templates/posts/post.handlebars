@@ -1,5 +1,10 @@
-<h1>Post</h1>
+{{#if controller.isLoaded}}
+  <p><b>Title:</b>{{title}}</p>
+  <p><b>Body:</b>{{body}}</p>
+  <p><b>Published:</b>{{published}}</p>
+{{else}}
+  <p>Loading</p>
+{{/if}}
 
-<p>Your content here.</p>
-
-{{outlet}}
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<a {{action goBack href=true}}>Back</a>
