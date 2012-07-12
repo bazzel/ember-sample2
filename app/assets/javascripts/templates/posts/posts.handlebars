@@ -9,13 +9,6 @@
   </tr>
 
   {{#each post in controller}}
-    <tr>
-      <td>{{post.title}}</td>
-      <td>{{post.body}}</td>
-      <td>{{post.published}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    {{view App.PostRowView postBinding="this"}}
   {{/each}}
 </table>
