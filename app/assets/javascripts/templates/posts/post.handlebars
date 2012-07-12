@@ -6,5 +6,5 @@
   <p>Loading</p>
 {{/if}}
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<a {{action editPost context="controller.content" href=true}}>Edit</a> |
 <a {{action goBack href=true}}>Back</a>
