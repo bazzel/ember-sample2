@@ -2,4 +2,4 @@
 <td>{{post.body}}</td>
 <td>{{post.published}}</td>
 <td><a {{action editPost context="post" href=true}}>Edit</a></td>
-<td><a {{action deletePost context="post" target="view" href=true}}>Destroy</a></td>
+<td>{{view App.DeletePostView postBinding="post"}}</td>
