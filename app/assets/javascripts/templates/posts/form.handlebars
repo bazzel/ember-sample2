@@ -14,6 +14,15 @@
       </div>
     </div>
 
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          {{view Ember.Checkbox checkedBinding="published"}}
+          Published
+        </label>
+      </div>
+    </div>
+
     <div class="form-actions">
       <button type="submit" class="btn btn-primary">Save</button>
       <a {{action cancel}} class="btn">Cancel</a>
