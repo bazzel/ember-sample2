@@ -17,6 +17,12 @@ App.Router = Em.Router.extend
       editPost: Em.Route.transitionTo 'edit'
       showPost: Em.Route.transitionTo 'show'
       goBack: Em.Route.transitionTo 'index'
+      cancel: (router, event) ->
+        router.getPath('applicationController.transaction').rollback()
+        router.transitionTo('index')
+      save: (router, event) ->
+        router.getPath('applicationController.transaction').commit()
+        router.transitionTo('index')
       # STATES
       index: Em.Route.extend
         # SETUP
@@ -47,12 +53,6 @@ App.Router = Em.Router.extend
         unroutePath: (router, path) ->
           router.getPath('applicationController.transaction').rollback()
           @_super(router, path)
-        save: (router, event) ->
-          router.getPath('applicationController.transaction').commit()
-          router.transitionTo('index')
-        cancel: (router, event) ->
-          router.getPath('applicationController.transaction').rollback()
-          router.transitionTo('index')
         # STATES
       create: Em.Route.extend
         # SETUP
@@ -70,12 +70,4 @@ App.Router = Em.Router.extend
         unroutePath: (router, path) ->
           router.getPath('applicationController.transaction').rollback()
           @_super(router, path)
-        save: (router, event) ->
-          router.getPath('applicationController.transaction').commit()
-          router.transitionTo('index')
-        cancel: (router, event) ->
-          router.getPath('applicationController.transaction').rollback()
-          router.transitionTo('index')
-
-
         # STATES
