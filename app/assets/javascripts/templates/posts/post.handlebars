@@ -1,4 +1,4 @@
-{{#if controller.isLoaded}}
+{{#if isLoaded}}
   <p><b>Title:</b>{{title}}</p>
   <p><b>Body:</b>{{body}}</p>
   <p><b>Published:</b>{{published}}</p>
@@ -6,6 +6,6 @@
   <p>Loading</p>
 {{/if}}
 
-<a {{action editPost context="controller.content" href=true}}>Edit</a> |
+<a {{action editPost context="content" href=true}}>Edit</a> |
 <a {{action goBack href=true}}>Back</a> |
-{{view App.DeletePostView postBinding="controller.content"}}
+{{view App.DeletePostView postBinding="content"}}
