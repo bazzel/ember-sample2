@@ -22,9 +22,6 @@ App.Router = Em.Router.extend
         # SETUP
         route: '/'
         connectOutlets: (router) ->
-          # TODO: Don't think this is the right way to rollback :(
-          # (transaction = router.getPath('applicationController.transaction')) and transaction.rollback()
-
           router.get('applicationController').connectOutlet('posts', App.Post.find())
         # EVENTS
         # STATES
@@ -39,11 +36,23 @@ App.Router = Em.Router.extend
         # SETUP
         route: '/:post_id/edit'
         connectOutlets: (router, post) ->
+          transaction = router.get('store').transaction()
+          transaction.add post
+          router.get('applicationController').set('transaction', transaction)
           router.get('applicationController').connectOutlet
             viewClass: App.EditPostView
             controller: router.get('postController')
             context: post
         # EVENTS
+        unroutePath: (router, path) ->
+          router.getPath('applicationController.transaction').rollback()
+          @_super(router, path)
+        save: (router, event) ->
+          router.getPath('applicationController.transaction').commit()
+          router.transitionTo('index')
+        cancel: (router, event) ->
+          router.getPath('applicationController.transaction').rollback()
+          router.transitionTo('index')
         # STATES
       create: Em.Route.extend
         # SETUP
