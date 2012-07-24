@@ -7,3 +7,4 @@ App.PostRowView = Em.View.extend
     if confirm("Are you sure you want to delete the post with title '#{post.get('title')}'?")
       post.deleteRecord()
       post.store.commit()
+      App.router.transitionTo('index')
