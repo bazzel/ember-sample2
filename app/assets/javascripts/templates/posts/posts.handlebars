@@ -1,4 +1,8 @@
+  <div>
+    {{length}} items
+  </div>
 {{#if isLoaded}}
+
   <table class='table table-striped table-bordered'>
     <tr>
       <th>Title</th>
@@ -9,7 +13,7 @@
     </tr>
 
     {{#each post in controller}}
-      {{view App.PostRowView postBinding="this"}}
+      {{view App.PostRowView}}
     {{/each}}
   </table>
   <br/>
