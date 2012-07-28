@@ -7,6 +7,8 @@ Every Post contain 0 or more Comments and Backtracks which are visible on the sh
 
 The application uses a [Rails 3.2.x](http://rubyonrails.org/) back-end and contains a generator to get you up and running.
 
+I'm using [Ember Data](https://github.com/emberjs/data) to retrieve data from the server.
+
 # Getting Started
 1. Clone this repo
 
@@ -30,3 +32,20 @@ The application uses a [Rails 3.2.x](http://rubyonrails.org/) back-end and conta
 
  `rails s`
 8. Open a browser and navigate to http://localhost:3000
+
+# More info
+## Location of JS files
+Although the application uses the [ember-rails](https://github.com/emberjs/ember-rails) gem, it only uses it for pre-compiling the handlebars templates.
+The required JS files for ember and ember data are built manually and located in **vendor/assets/javascript**.
+Application logic is located in **app/assets/javascripts** (this is the suggested location according to Rails' [assets pipeline](http://guides.rubyonrails.org/asset_pipeline.html)).
+
+## What's included
+- ember.js router and some nested routes
+- transaction usage (commit and rollback)
+
+## What's not included
+- Tests (it's only a prototype :))
+- Client side validation
+- Flash notification
+- ...
+
