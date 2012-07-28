@@ -16,7 +16,7 @@ App.Router = Em.Router.extend
       createPost: Em.Route.transitionTo 'create'
       editPost: Em.Route.transitionTo 'edit'
       showPost: Em.Route.transitionTo 'show'
-      goBack: Em.Route.transitionTo 'index'
+      goBack: Em.Route.transitionTo 'posts.index'
       cancel: (router, event) ->
         router.get('applicationController.transaction').rollback()
         router.transitionTo('index')
@@ -37,7 +37,15 @@ App.Router = Em.Router.extend
         connectOutlets: (router, post) ->
           router.get('applicationController').connectOutlet('post', post)
         # EVENTS
+        showComments: Em.Route.transitionTo('comments')
         # STATES
+        index: Em.Route.extend
+          route: '/'
+        comments: Em.Route.extend
+          route: '/comments'
+          connectOutlets: (router) ->
+            postController = router.get('postController')
+            postController.connectOutlet('comments', postController.get('comments'))
       edit: Em.Route.extend
         # SETUP
         route: '/:post_id/edit'
