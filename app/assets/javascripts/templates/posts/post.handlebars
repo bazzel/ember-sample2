@@ -6,7 +6,7 @@
   <p>Loading</p>
 {{/if}}
 
-<a {{action editPost context="content" href=true}}>Edit</a> |
+<a {{action editPost content href=true}}>Edit</a> |
 <a {{action goBack href=true}}>Back</a> |
 {{view App.DeletePostView postBinding="content"}}
 {{outlet}}
