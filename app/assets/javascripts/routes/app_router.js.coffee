@@ -7,7 +7,7 @@ App.Router = Em.Router.extend
     # STATES
     index: Em.Route.extend
       route: '/'
-      redirectsTo: 'posts'
+      redirectsTo: 'posts.index'
 
     posts: Em.Route.extend
       # SETUP
