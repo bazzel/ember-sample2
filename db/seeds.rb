@@ -11,5 +11,9 @@ Post.destroy_all
   Post.create do |p|
     p.title = Faker::Company.catch_phrase
     p.body = Faker::Lorem.paragraphs.join(' ')
+
+    Random.rand(10).times do |j|
+      p.comments.build :body => Faker::Lorem.paragraphs.join(' ')
+    end
   end
 end

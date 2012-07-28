@@ -1,5 +1,6 @@
 <td><a {{action showPost context="post" href=true}}>{{post.title}}</a></td>
 <td {{bindAttr title="post.body"}} rel="tooltip">{{post.intro}}</td>
 <td>{{post.published}}</td>
+<td>{{post.comments.length}}</td>
 <td><a {{action editPost context="post" href=true}}>Edit</a></td>
 <td>{{view App.DeletePostView postBinding="post"}}</td>

@@ -12,3 +12,6 @@ App.Post = DS.Model.extend
   ).property('body')
 
   published: DS.attr('boolean')
+  comments: DS.hasMany('App.Comment',
+    embedded: true
+  )
