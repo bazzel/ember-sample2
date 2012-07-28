@@ -15,3 +15,6 @@ App.Post = DS.Model.extend
   comments: DS.hasMany('App.Comment',
     embedded: true
   )
+  trackbacks: DS.hasMany('App.Trackback',
+    embedded: true
+  )

@@ -1,4 +1,6 @@
 VerySimpleCrud::Application.routes.draw do
+  resources :trackbacks
+
   resources :comments
 
   resources :posts

@@ -15,5 +15,9 @@ Post.destroy_all
     Random.rand(10).times do |j|
       p.comments.build :body => Faker::Lorem.paragraphs.join(' ')
     end
+
+    Random.rand(10).times do |j|
+      p.trackbacks.build :url => Faker::Internet.domain_name
+    end
   end
 end

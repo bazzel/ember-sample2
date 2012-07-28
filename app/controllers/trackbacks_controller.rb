@@ -1,0 +1,2 @@
+class TrackbacksController < ApplicationController
+end

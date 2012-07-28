@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :json, :html
 
   def index
-    respond_with Post.includes(:comments).all
+    respond_with Post.includes(:comments, :trackbacks).all
   end
 
   def show

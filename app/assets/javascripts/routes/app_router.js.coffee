@@ -38,6 +38,7 @@ App.Router = Em.Router.extend
           router.get('applicationController').connectOutlet('post', post)
         # EVENTS
         showComments: Em.Route.transitionTo('comments')
+        showTrackbacks: Em.Route.transitionTo('trackbacks')
         # STATES
         index: Em.Route.extend
           route: '/'
@@ -46,6 +47,11 @@ App.Router = Em.Router.extend
           connectOutlets: (router) ->
             postController = router.get('postController')
             postController.connectOutlet('comments', postController.get('comments'))
+        trackbacks: Em.Route.extend
+          route: '/trackbacks'
+          connectOutlets: (router) ->
+            postController = router.get('postController')
+            postController.connectOutlet('trackbacks', postController.get('trackbacks'))
       edit: Em.Route.extend
         # SETUP
         route: '/:post_id/edit'

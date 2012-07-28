@@ -10,6 +10,7 @@
 <a {{action goBack href=true}}>Back</a> |
 {{view App.DeletePostView postBinding="content"}}
 <p>
-<a {{action showComments href=true}}>Comments ({{comments.length}})</a>
+<a {{action showComments href=true}}>Comments ({{comments.length}})</a> |
+<a {{action showTrackbacks href=true}}>Trackbacks ({{trackbacks.length}})</a>
 </p>
 {{outlet}}
